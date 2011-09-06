@@ -4,7 +4,7 @@ require "watir-webdriver-rails/version"
 
 Gem::Specification.new do |s|
   s.name        = "watir-webdriver-rails"
-  s.version     = Watir::VERSION
+  s.version     = WatirWebdriverRails::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Tanin Na Nakorn"]
   s.email       = ["tanin47@gmail.com"]

@@ -46,17 +46,17 @@ module WatirWebdriverRails
           Rack::Handler::WEBrick.run(app, :Port => @port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
         end
       end
-    end
-    
-    
-    timeout(@server_boot_timeout) do
-      if responsive? 
-        true 
-      else 
-        sleep(0.5)
-        false 
+
+      timeout(@server_boot_timeout) do
+        if responsive? 
+          true 
+        else 
+          sleep(0.5)
+          false 
+        end
       end
     end
+    
     
     def responsive?
       res = Net::HTTP.start("127.0.0.1", @port) { |http| http.get('/__identify__') }
