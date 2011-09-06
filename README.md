@@ -51,7 +51,7 @@ describe "Test something" do
 		browser.text_field(:id=>"first_name").set "Tanin"
 		browser.text_field(:id=>"last_name").set "Na Nakorn"
 		
-		browser.
+		browser.text_field(:id=>"first_name").value.should == "Tanin"
 	end
 end
 
@@ -77,7 +77,6 @@ Development
 Please try running all the test cases first by going to the root folder and type:
 
 ``
-bundle install
 bundle exec rspec spec/*
 ``
 
@@ -88,6 +87,6 @@ License
 There are parts which are copied from capybara and capybara-firebug gems. Please also be aware of their licenses.
 Other than that, you can do anything with it.
 
-Authors
+Author
 ---------
 Tanin Na Nakorn
