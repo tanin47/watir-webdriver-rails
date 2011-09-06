@@ -1,6 +1,8 @@
 require 'watir-webdriver'
 
 module WatirWebdriverRails
+
+  # Copied from capybara-firebug
   class Selenium::WebDriver::Firefox::Profile
     def self.firebug_version
       @firebug_version ||= '1.7.3'

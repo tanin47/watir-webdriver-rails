@@ -40,10 +40,10 @@ module WatirWebdriverRails
         begin
           require 'rack/handler/thin'
           Thin::Logging.silent = true
-          Rack::Handler::Thin.run(app, :Port => @port)
+          Rack::Handler::Thin.run(Identify.new(app), :Port => @port)
         rescue LoadError
           require 'rack/handler/webrick'
-          Rack::Handler::WEBrick.run(app, :Port => @port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
+          Rack::Handler::WEBrick.run(Identify.new(app), :Port => @port, :AccessLog => [], :Logger => WEBrick::Log::new(nil, 0))
         end
       end
 
