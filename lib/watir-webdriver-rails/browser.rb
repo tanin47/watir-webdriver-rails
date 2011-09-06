@@ -6,9 +6,5 @@ module WatirWebdriverRails
       @browser = Watir::Browser.new(WatirWebdriverRails.driver)
     end
     
-    def reset_sessions!
-      @browser.clear_cookies
-    end
-    
   end
 end
