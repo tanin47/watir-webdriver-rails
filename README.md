@@ -3,6 +3,12 @@ watir-webdriver-rails
 
 watir-webdriver-rails provides a dead-simple integration test of Watir with Rails 3.
 
+Current version
+----------------
+``
+0.0.2
+``
+
 Installation
 --------
 
