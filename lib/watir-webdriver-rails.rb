@@ -14,23 +14,17 @@ require 'watir-webdriver-rails/rspec'
 # start server
 RSpec.configure do |config|
   
-  config.include WatirWebdriverRails::RSpec
+  config.include WatirWebdriverRails::RSpec, :example_group=>{:file_path=>/spec[\\\/](requests|integration)/}
   
-  config.before(:suite) do
-     WatirWebdriverRails.run_server
-     WatirWebdriverRails.initialize_browser
-     
-     WatirWebdriverRails.browser.class_eval do
-       alias_method :old_goto,:goto
-       
-       def goto(*args)
-         
-         if !args[0].match(/^https?:/)
-            args[0] = "http://#{WatirWebdriverRails.host}:#{WatirWebdriverRails.port}#{args[0]}"
-         end
-         
-         old_goto(*args)      
-       end
-     end
+  config.after do
+    if self.class.include?(WatirWebdriverRails::RSpec)
+      browser.clear_cookies
+    end
+  end
+  config.before do
+    if self.class.include?(WatirWebdriverRails::RSpec)
+       WatirWebdriverRails.run_server
+       WatirWebdriverRails.initialize_browser
+    end
   end
 end

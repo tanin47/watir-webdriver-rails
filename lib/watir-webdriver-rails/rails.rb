@@ -19,11 +19,12 @@ module WatirWebdriverRails
   end
 
   class << self
-    attr_accessor :host, :port, :server_boot_timeout, :app
+    attr_accessor :host, :port, :server_boot_timeout, :app, :server_running
     
     
     
     def run_server
+      return if @server_running == true
       
       @app = Rack::Builder.new {
         map "/" do
@@ -55,6 +56,8 @@ module WatirWebdriverRails
           false 
         end
       end
+      
+      @server_running = true
     end
     
     
