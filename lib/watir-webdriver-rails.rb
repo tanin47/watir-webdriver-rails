@@ -16,7 +16,7 @@ RSpec.configure do |config|
   
   config.include WatirWebdriverRails::RSpec, :example_group=>{:file_path=>/spec[\\\/](requests|integration)/}
   
-  config.after do
+  config.after(:each) do
     if self.class.include?(WatirWebdriverRails::RSpec)
       browser.clear_cookies
     end

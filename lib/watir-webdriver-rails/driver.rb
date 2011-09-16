@@ -14,7 +14,8 @@ module WatirWebdriverRails
   
     def enable_firebug(version = nil)
       version ||= Selenium::WebDriver::Firefox::Profile.firebug_version
-      add_extension(File.expand_path("../firebug/firebug-#{version}.xpi", __FILE__))
+      #add_extension(File.expand_path("../firebug/firebug-1.7.3.xpi", __FILE__))
+      add_extension(File.expand_path("../firebug/firebug-1.8.1.xpi", __FILE__))
   
       # Prevent "Welcome!" tab
       self["extensions.firebug.currentVersion"] = "999"
@@ -28,7 +29,7 @@ module WatirWebdriverRails
       end
   
       # Closed by default.
-      self["extensions.firebug.previousPlacement"] = 2
+      self["extensions.firebug.previousPlacement"] = 3
     end
   end
   
