@@ -6,7 +6,7 @@ watir-webdriver-rails provides a dead-simple way to use Watir with Rails 3.
 Current version
 ----------------
 ``
-0.0.2
+0.0.6
 ``
 
 Installation
