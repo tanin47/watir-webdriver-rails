@@ -24,5 +24,10 @@ module WatirWebdriverRails
       @browser_initialized = true
     end
     
+    def close_browser
+      @browser.close if @browser_initialized == true
+      @browser_initialized = false
+    end
+     
   end
 end
