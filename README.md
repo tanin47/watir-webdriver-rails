@@ -71,7 +71,7 @@ Issues
 ----------
 
 On Mac OS X 10.6.8, I have found that if you do not close the browser from the previous test, 
-your current test will hang because the browser is not initilized.
+your current test will hang because the browser is not initialized.
 
 Please do close the browser before running a new test.
 
@@ -104,5 +104,5 @@ Other than that, you can do anything with it.
 
 Author
 ---------
-Tanin Na Nakorn
-homanchou (The first contributor)
+* Tanin Na Nakorn
+* homanchou (The first contributor)
