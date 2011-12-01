@@ -6,7 +6,7 @@ watir-webdriver-rails provides a dead-simple way to use Watir with Rails 3.
 Current version
 ----------------
 ``
-0.0.6
+0.0.7
 ``
 
 Installation
@@ -39,6 +39,7 @@ require 'watir-webdriver-rails'
 
 WatirWebdriverRails.host = "localhost"
 WatirWebdriverRails.port = 57124
+WatirWebdriverRails.close_browser_after_finish = true
 
 ```
 
@@ -65,6 +66,14 @@ end
 
 browser is of type Watir::Browser. You may interact with it freely.
 See http://rubydoc.info/gems/watir-webdriver/0.3.2/Watir/Browser
+
+Issues
+----------
+
+On Mac OS X 10.6.8, I have found that if you do not close the browser from the previous test, 
+your current test will hang because the browser is not initilized.
+
+Please do close the browser before running a new test.
 
 Dependencies
 ------------
@@ -96,3 +105,4 @@ Other than that, you can do anything with it.
 Author
 ---------
 Tanin Na Nakorn
+homanchou (The first contributor)
