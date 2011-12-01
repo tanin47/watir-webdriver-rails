@@ -14,13 +14,18 @@ require 'watir-webdriver-rails/rspec'
 # start server
 RSpec.configure do |config|
   
-  config.include WatirWebdriverRails::RSpec, :example_group=>{:file_path=>/spec[\\\/](requests|integration)/}
+  config.include WatirWebdriverRails::RSpec, :example_group=>{:file_path=>/spec[\\\/](requests|integration|controllers)/}
   
   config.after(:each) do
     if self.class.include?(WatirWebdriverRails::RSpec)
       browser.clear_cookies
     end
   end
+  
+  config.after(:suite) do
+    WatirWebdriverRails.close_browser
+  end
+
   config.before do
     if self.class.include?(WatirWebdriverRails::RSpec)
        WatirWebdriverRails.run_server
