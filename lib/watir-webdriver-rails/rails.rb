@@ -19,7 +19,7 @@ module WatirWebdriverRails
   end
 
   class << self
-    attr_accessor :host, :port, :server_boot_timeout, :app, :server_running, :close_browser_after_finish
+    attr_accessor :host, :port, :server_boot_timeout, :app, :server_running, :close_browser_after_finish, :driver
     
     
     
