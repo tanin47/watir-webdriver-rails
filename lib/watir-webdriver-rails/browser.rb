@@ -5,15 +5,15 @@ module WatirWebdriverRails
     def initialize_browser
       
       return if @browser_initialized == true
-      
-      @browser = Watir::Browser.new(WatirWebdriverRails.driver)
+
+      @browser = Watir::Browser.new(WatirWebdriverRails.web_driver)
       
       @browser.class_eval do
          alias_method :old_goto,:goto
          
          def goto(*args)
            
-           if !args[0].match(/^https?:/)
+           if !args[0].match(/^(https?"|about):/)
               args[0] = "http://#{WatirWebdriverRails.host}:#{WatirWebdriverRails.port}#{args[0]}"
            end
            
