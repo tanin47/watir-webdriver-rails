@@ -22,7 +22,7 @@ RSpec.configure do |config|
     end
   end
   
-  config.after(:suite) do
+  config.after(:all) do
     WatirWebdriverRails.close_browser if WatirWebdriverRails.close_browser_after_finish == true
   end
 
