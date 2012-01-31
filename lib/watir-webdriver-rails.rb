@@ -34,9 +34,9 @@ RSpec.configure do |config|
   end
 
 # I would really love to add this hook, but it complains that URL is not valid.
-#  config.before(:each) do
-#    if self.class.include?(WatirWebdriverRails::RSpec)
-#      browser.goto 'about:blank'
-#    end
-#  end
+  config.before(:each) do
+    if self.class.include?(WatirWebdriverRails::RSpec)
+      browser.goto "about:blank"
+    end
+  end
 end
