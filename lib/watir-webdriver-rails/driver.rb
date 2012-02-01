@@ -14,7 +14,7 @@ module WatirWebdriverRails
         when :chrome
           profile = Selenium::WebDriver::Chrome::Profile.new
           profile['download.prompt_for_download'] = false
-          switches = %w[--ignore-certificate-errors --disable-popup-blocking --disable-translate --start-minimized]
+          switches = %w[--ignore-certificate-errors --disable-popup-blocking --disable-translate --disable-extensions --incognito --no-default-browser-check --no-process-singleton-dialog --no-message-box ---no-startup-window]
           Selenium::WebDriver.for :chrome, :profile => profile, :switches => switches
         else
           raise "Invalid dirver: " + @driver.to_s
