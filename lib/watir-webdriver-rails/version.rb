@@ -1,3 +1,3 @@
 module WatirWebdriverRails
-  VERSION = "0.0.8beta03"
+  VERSION = "0.0.9"
 end
