@@ -1,7 +1,7 @@
 watir-webdriver-rails
 ===============
 
-watir-webdriver-rails provides a dead-simple way to use Watir with Rails 3.
+(fork fixes :chrome support) watir-webdriver-rails provides a dead-simple way to use Watir with Rails 3.
 
 Current version
 ----------------
