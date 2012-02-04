@@ -1,7 +1,7 @@
 watir-webdriver-rails
 ===============
 
-watir-webdriver-rails provides a dead-simple way to use Watir with Rails 3.
+(fork fixes :chrome support) watir-webdriver-rails provides a dead-simple way to use Watir with Rails 3.
 
 Current version
 ----------------
@@ -11,6 +11,9 @@ Current version
 
 Installation
 --------
+
+Obtain the driver from http://code.google.com/p/chromium/downloads/list and install it in your path
+
 
 In your Gemfile, drop the below line
 
@@ -52,12 +55,12 @@ require 'spec_helper'
 describe "Test something" do
 
 	it "should go to some page and fill textbox" do
-	
+
 		browser.goto "/member"
-		
+
 		browser.text_field(:id=>"first_name").set "Tanin"
 		browser.text_field(:id=>"last_name").set "Na Nakorn"
-		
+
 		browser.text_field(:id=>"first_name").value.should == "Tanin"
 	end
 end
@@ -70,7 +73,7 @@ See http://rubydoc.info/gems/watir-webdriver/0.3.2/Watir/Browser
 Issues
 ----------
 
-On Mac OS X 10.6.8, I have found that if you do not close the browser from the previous test, 
+On Mac OS X 10.6.8, I have found that if you do not close the browser from the previous test,
 your current test will hang because the browser is not initialized.
 
 Please do close the browser before running a new test.

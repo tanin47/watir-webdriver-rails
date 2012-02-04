@@ -18,11 +18,11 @@ RSpec.configure do |config|
   
   config.after(:each) do
     if self.class.include?(WatirWebdriverRails::RSpec)
-      browser.clear_cookies
+      browser.cookies.clear
     end
   end
   
-  config.after(:suite) do
+  config.after(:all) do
     WatirWebdriverRails.close_browser if WatirWebdriverRails.close_browser_after_finish == true
   end
 
@@ -34,9 +34,9 @@ RSpec.configure do |config|
   end
 
 # I would really love to add this hook, but it complains that URL is not valid.
-#  config.before(:each) do
-#    if self.class.include?(WatirWebdriverRails::RSpec)
-#      browser.goto 'about:blank'
-#    end
-#  end
+  config.before(:each) do
+    if self.class.include?(WatirWebdriverRails::RSpec)
+      browser.goto "about:blank"
+    end
+  end
 end
