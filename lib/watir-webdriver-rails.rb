@@ -18,7 +18,7 @@ RSpec.configure do |config|
   
   config.after(:each) do
     if self.class.include?(WatirWebdriverRails::RSpec)
-      browser.clear_cookies
+      browser.cookies.clear
     end
   end
   
